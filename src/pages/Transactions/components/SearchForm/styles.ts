@@ -29,7 +29,8 @@ export const SearchFormContainer = styled.form`
     border-radius: 6px;
     color: ${props => props.theme["green-300"]};
     font-weight: bold;
-    transition: background-color 0.4s color 0.4s border-color 0.4s;
+    transition: background-color 0.4s;
+    
 
     &:hover{
       background: ${props => props.theme["green-500"]};
