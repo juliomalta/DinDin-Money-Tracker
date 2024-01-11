@@ -7,6 +7,14 @@
       "type": "deposit",
       "price": 14000,
       "date": "2024-01-31T13:26:14.064Z"
+    },
+    {
+      "id": "2",
+      "description": "Hamburg",
+      "category": "Alimentação",
+      "type": "withdraw",
+      "price": 98,
+      "date": "2024-02-01T13:26:14.064Z"
     }
   ]
 }

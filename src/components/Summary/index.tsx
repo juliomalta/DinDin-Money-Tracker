@@ -1,7 +1,32 @@
+import { useContext } from "react";
 import { SummaryCard, SummaryContainer } from "./styles";
 import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "phosphor-react";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { priceFormatter } from "../../utils/formatter";
 
 export function Summary() {
+  const { transactions } = useContext(TransactionsContext)
+
+  const summary = transactions.reduce((acc, transaction) => {
+    if (transaction.type === 'deposit') {
+      acc.deposit += transaction.price
+      acc.total += transaction.price
+
+    } else {
+      acc.withdraw += transaction.price
+      acc.total -= transaction.price
+    
+    }
+
+    return acc;
+  },
+  {
+    deposit: 0,
+    withdraw: 0,
+    total: 0
+  })
+  
+  
   return (
     <SummaryContainer>
       <SummaryCard>
@@ -9,21 +34,21 @@ export function Summary() {
           <span>Entradas</span>
           <ArrowCircleUp size={32} color="#00b37e" />
         </header>
-        <strong>U$ 16.500,00</strong>
+        <strong>{priceFormatter.format(summary.deposit)}</strong>
       </SummaryCard>
       <SummaryCard>
         <header>
           <span>Saídas</span>
           <ArrowCircleDown size={32} color="#f75a68" />
         </header>
-        <strong>R$ 5.500,00</strong>
+        <strong>{priceFormatter.format(summary.withdraw)}</strong>
       </SummaryCard>
       <SummaryCard variant="green">
         <header>
           <span>Total</span>
           <CurrencyDollar size={32} color="#fff" />
         </header>
-        <strong>U$ 16.500,00</strong>
+        <strong>{priceFormatter.format(summary.total)}</strong>
       </SummaryCard>
     </SummaryContainer>
   )

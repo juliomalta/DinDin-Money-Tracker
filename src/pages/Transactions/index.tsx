@@ -4,6 +4,7 @@ import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
 import { TransactionType, TransactionsContainer, TransactionsTable } from "./styles";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
 
 
 export function Transactions() {
@@ -24,11 +25,12 @@ export function Transactions() {
                   <td width="50%">{transaction.description}</td>
                   <td>
                     <TransactionType variant={transaction.type}>
-                      {transaction.price}
+                      {transaction.type === 'withdraw' && '- '}
+                      {priceFormatter.format(transaction.price)}
                     </TransactionType>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{transaction.date}</td>
+                  <td>{dateFormatter.format(new Date(transaction.date))}</td>
                 </tr>
 
               )
