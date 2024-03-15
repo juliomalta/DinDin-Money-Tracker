@@ -6,9 +6,9 @@ interface Transaction {
   id: number
   description: string
   type: 'deposit' | 'withdraw'
-  price: number
+  amount: number
   category: string
-  date: string
+  date: Date
 }
 
 interface CreateTransactionData {
@@ -35,15 +35,18 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
 
   const fetchTransactions = useCallback(async (query?: string) => {
     const response = await api.get('transactions', {
-      params: {
-        _sort: 'date',
+      params: 
+      query ? {
+        _sort: 'createdAt',
         _order: 'desc',
         q: query,
-      },
+      } : null,
     })
 
     setTransactions(response.data)
   }, [])
+
+  
 
   const createTransaction = useCallback(async (data: CreateTransactionData) => {
     const { description, amount, category, type } = data
@@ -53,7 +56,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       amount,
       category,
       type,
-      createdAt: new Date(),
+      date: new Date(),
     })
 
     setTransactions((state) => [response.data, ...state])

@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
 import { SearchForm } from './components/SearchForm'
@@ -15,6 +16,8 @@ export function Transactions() {
     return context.transactions
   })
 
+  console.log('transactions', transactions);
+
   return (
     <div>
       <Header />
@@ -24,18 +27,18 @@ export function Transactions() {
         <SearchForm />
         <TransactionsTable>
           <tbody>
-            {transactions.map((transaction) => {
+            {transactions?.map((transaction) => {
               return (
                 <tr key={transaction.id}>
                   <td width="50%">{transaction.description}</td>
                   <td>
                     <TransactionType variant={transaction.type}>
                       {transaction.type === 'withdraw' && '- '}
-                      {priceFormatter.format(transaction.price)}
+                      {priceFormatter.format(transaction.amount)}
                     </TransactionType>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{dateFormatter.format(new Date(transaction.date))}</td>
+                  <td>{dateFormatter(transaction.date)}</td>
                 </tr>
               )
             })}

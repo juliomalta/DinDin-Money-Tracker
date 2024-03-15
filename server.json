@@ -5,7 +5,7 @@
       "description": "Desenvolvimento de site",
       "category": "dev",
       "type": "deposit",
-      "price": 14000,
+      "amount": 14000,
       "date": "2024-01-31T13:26:14.064Z"
     },
     {
@@ -13,7 +13,7 @@
       "description": "Hamburg",
       "category": "Alimentação",
       "type": "withdraw",
-      "price": 98,
+      "amount": 98,
       "date": "2024-02-01T13:26:14.064Z"
     },
     {
@@ -22,7 +22,7 @@
       "amount": 3200,
       "category": "Dev",
       "type": "deposit",
-      "createdAt": "2024-02-27T19:31:23.985Z"
+      "date": "2024-02-27T19:31:23.985Z"
     },
     {
       "id": "12d5",
@@ -30,7 +30,71 @@
       "amount": 50,
       "category": "Remédio",
       "type": "withdraw",
-      "createdAt": "2024-02-28T13:23:18.978Z"
+      "date": "2024-02-28T13:23:18.978Z"
+    },
+    {
+      "id": "6bb7",
+      "description": "aeee",
+      "amount": 12,
+      "category": "2",
+      "type": "deposit",
+      "date": "2024-03-15T01:08:31.356Z"
+    },
+    {
+      "id": "d7ea",
+      "description": "eee",
+      "amount": 222,
+      "category": "2",
+      "type": "withdraw",
+      "date": "2024-03-15T01:11:57.387Z"
+    },
+    {
+      "id": "2d2b",
+      "description": "teste amount",
+      "amount": 2222,
+      "category": "2",
+      "type": "withdraw",
+      "date": "2024-03-15T02:52:28.624Z"
+    },
+    {
+      "id": "6bd6",
+      "description": "amount 12",
+      "amount": 12333,
+      "category": "2",
+      "type": "deposit",
+      "date": "2024-03-15T02:53:44.091Z"
+    },
+    {
+      "id": "58ed",
+      "description": "12",
+      "amount": 22,
+      "category": "2",
+      "type": "withdraw",
+      "date": "2024-03-15T03:02:37.329Z"
+    },
+    {
+      "id": "13a3",
+      "description": "nova data",
+      "amount": 123,
+      "category": "cat2 ",
+      "type": "withdraw",
+      "date": "2024-03-15T03:10:58.575Z"
+    },
+    {
+      "id": "de67",
+      "description": "novo 1",
+      "amount": 121,
+      "category": "cat 1",
+      "type": "withdraw",
+      "date": "2024-03-15T03:36:56.543Z"
+    },
+    {
+      "id": "349e",
+      "description": "novo +1",
+      "amount": 1,
+      "category": "+1",
+      "type": "deposit",
+      "date": "2024-03-15T03:37:13.512Z"
     }
   ]
 }
