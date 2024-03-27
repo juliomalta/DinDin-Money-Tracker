@@ -5,7 +5,7 @@
       "description": "Desenvolvimento de site",
       "category": "dev",
       "type": "deposit",
-      "price": 14000,
+      "amount": 14000,
       "date": "2024-01-31T13:26:14.064Z"
     },
     {
@@ -13,7 +13,7 @@
       "description": "Hamburg",
       "category": "Alimentação",
       "type": "withdraw",
-      "price": 98,
+      "amount": 98,
       "date": "2024-02-01T13:26:14.064Z"
     },
     {
@@ -22,7 +22,7 @@
       "amount": 3200,
       "category": "Dev",
       "type": "deposit",
-      "createdAt": "2024-02-27T19:31:23.985Z"
+      "date": "2024-02-27T19:31:23.985Z"
     },
     {
       "id": "12d5",
@@ -30,7 +30,23 @@
       "amount": 50,
       "category": "Remédio",
       "type": "withdraw",
-      "createdAt": "2024-02-28T13:23:18.978Z"
+      "date": "2024-02-28T13:23:18.978Z"
+    },
+    {
+      "id": "e0c2",
+      "description": "Clone de dashboard",
+      "amount": 3500,
+      "category": "Dev",
+      "type": "deposit",
+      "date": "2024-03-14T20:56:18.175Z"
+    },
+    {
+      "id": "babd",
+      "description": "Lanche",
+      "amount": 49,
+      "category": "Comida",
+      "type": "withdraw",
+      "date": "2024-03-27T16:05:59.176Z"
     }
   ]
 }

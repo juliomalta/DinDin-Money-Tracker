@@ -7,7 +7,7 @@ import {
   TransactionsTable,
 } from './styles'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
-import { dateFormatter, priceFormatter } from '../../utils/formatter'
+import { priceFormatter } from '../../utils/formatter'
 import { useContextSelector } from 'use-context-selector'
 
 export function Transactions() {
@@ -22,6 +22,7 @@ export function Transactions() {
 
       <TransactionsContainer>
         <SearchForm />
+
         <TransactionsTable>
           <tbody>
             {transactions.map((transaction) => {
@@ -31,11 +32,13 @@ export function Transactions() {
                   <td>
                     <TransactionType variant={transaction.type}>
                       {transaction.type === 'withdraw' && '- '}
-                      {priceFormatter.format(transaction.price)}
+                      {priceFormatter.format(transaction.amount)}
                     </TransactionType>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{dateFormatter.format(new Date(transaction.date))}</td>
+                  <td>
+                    {new Date(transaction.date).toLocaleDateString('pt-BR')}
+                  </td>
                 </tr>
               )
             })}
